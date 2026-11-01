@@ -1,0 +1,3 @@
+{
+    "postEffectEnables": ["tonemap", "hdr", "smooth"]
+}
