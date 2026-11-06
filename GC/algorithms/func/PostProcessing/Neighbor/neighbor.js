@@ -5,19 +5,19 @@ import setFixed2 from "../../../../utils/setFixed2.js";
 
 export default function neighbor(hsl, palet, key) {
     //Pesos, ajuste para efeitos mais visiveis
-    const A = 0.02;
-    const AH = 0.07;
+    const A = 0.3;
+    const AH = 0.02;
 
-    const STEEPS = 50;
+    const STEPS = 50;
 
     //Obtem a posição, anterior e depois do objeto de cores
-    const BEFORE = palet[key - STEEPS] ?? palet[key];
+    const BEFORE = palet[key - STEPS] ?? palet[key];
     const CURRENT = palet[key];
-    const AFTER = palet[key + STEEPS] ?? palet[key];
+    const AFTER = palet[key + STEPS] ?? palet[key];
 
     //Novo S e L(hsl)
     let l = BEFORE[2] * A + CURRENT[2] * (1 - 2 * A) + AFTER[2] * A;
-    let s = BEFORE[2] * A + CURRENT[2] * (1 - 2 * A) + AFTER[2] * A;
+    let s = BEFORE[1] * A + CURRENT[1] * (1 - 2 * A) + AFTER[1] * A;
 
     //obtem o Hue, da cor anterior, cor de agora, cor de depois
     const HPREV = BEFORE[0];

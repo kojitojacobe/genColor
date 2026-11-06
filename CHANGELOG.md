@@ -1,6 +1,13 @@
 # Changelog
 
-## Atualização 1.1.0
+## Atualização 1.1.1
+
+## [1.1.0] - 2026-11-06
+
+### Fixed
+- Corrigido o calculo de saturação de neighbor.
+
+
 
 A atualização deste mês traz algumas novidades, sem introduzir mudanças que quebrem a compatibilidade com a API existente.
 
