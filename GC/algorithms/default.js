@@ -31,10 +31,10 @@ export default function defaultPallet(hsl, postEffect, types) {
 
         100: [setFixed2(Matiz(hsl[0], 20), 0), setFixed2(saturation(hsl[1], 0.35), 0), setFixed2(luminance(hsl[2], 0.3), 0)],
 
-        150: [setFixed2(Matiz(hsl[0], 0), 0), setFixed2(deSaturation(hsl[1], 0.50), 0), setFixed2(luminance(hsl[2], 0.70), 0)],
+        150: [setFixed2(Matiz(hsl[0], 0), 0), setFixed2(deSaturation(hsl[1], 0.40), 0), setFixed2(luminance(hsl[2], 0.55), 0)],
 
-        200: [setFixed2(Matiz(hsl[0], -15), 0), setFixed2(deSaturation(hsl[1], 0.30), 0), setFixed2(luminance(hsl[2], 0.60), 0)],
-        250: [setFixed2(Matiz(hsl[0], 20), 0), setFixed2(deSaturation(hsl[1], 0.20), 0),  setFixed2(luminance(hsl[2], 0.50), 0)],
+        200: [setFixed2(Matiz(hsl[0], -15), 0), setFixed2(deSaturation(hsl[1], 0.30), 0), setFixed2(luminance(hsl[2], 0.45), 0)],
+        250: [setFixed2(Matiz(hsl[0], 20), 0), setFixed2(deSaturation(hsl[1], 0.20), 0),  setFixed2(luminance(hsl[2], 0.35), 0)],
         300: [setFixed2(Matiz(hsl[0], 0), 0), setFixed2(saturation(hsl[1], 0.70), 0),   setFixed2(darkness(hsl[2], 0.4), 0)],
         350: [setFixed2(Matiz(hsl[0], -15), 0), setFixed2(saturation(hsl[1], 0.60), 0), setFixed2(darkness(hsl[2], 0.3), 0)],
         400: [setFixed2(Matiz(hsl[0], 20), 0), setFixed2(saturation(hsl[1], 0.5), 0),   setFixed2(darkness(hsl[2], 0.2), 0)]

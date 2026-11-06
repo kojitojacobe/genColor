@@ -25,16 +25,16 @@ export default function genPaletMonocromatic(hsl, postEffect, types = 'hex') {
     const genPaletMonocromatic = {
 
         0: [setFixed2(hsl[0], 0), setFixed2(hsl[1], 0), setFixed2(hsl[2], 0)],
-        50: [setFixed2(Matiz(hsl[0], 1), 0), setFixed2(deSaturation(hsl[1], 0.2), 0), setFixed2(luminance(hsl[2], 0.05), 0)],
+        50: [setFixed2(Matiz(hsl[0], 6), 0), setFixed2(deSaturation(hsl[1], 0.1), 0), setFixed2(luminance(hsl[2], 0.05), 0)],
 
 
-        100: [setFixed2(Matiz(hsl[0], 7), 0), setFixed2(deSaturation(hsl[1], 0.4), 0), setFixed2(luminance(hsl[2], 0.30), 0)],
-        150: [setFixed2(Matiz(hsl[0], 5), 0), setFixed2(deSaturation(hsl[1], 0.5), 0), setFixed2(luminance(hsl[2], 0.40), 0)],
-        200: [setFixed2(Matiz(hsl[0], 3), 0), setFixed2(deSaturation(hsl[1], 0.6), 0), setFixed2(luminance(hsl[2], 0.50), 0)],
-        250: [setFixed2(Matiz(hsl[0], 1), 0), setFixed2(deSaturation(hsl[1], 0.7), 0), setFixed2(luminance(hsl[2], 0.60), 0)],
-        300: [setFixed2(Matiz(hsl[0], 0), 0), setFixed2(deSaturation(hsl[1], 0.8), 0), setFixed2(luminance(hsl[2], 0.65), 0)],
-        350: [setFixed2(Matiz(hsl[0], -2), 0), setFixed2(deSaturation(hsl[1], 0.85), 0), setFixed2(luminance(hsl[2], 0.7), 0)],
-        400: [setFixed2(Matiz(hsl[0], -3), 0), setFixed2(deSaturation(hsl[1], 0.9), 0), setFixed2(luminance(hsl[2], 0.8), 0)]
+        100: [setFixed2(Matiz(hsl[0], 5), 0), setFixed2(deSaturation(hsl[1], 0.2), 0), setFixed2(luminance(hsl[2], 0.15), 0)],
+        150: [setFixed2(Matiz(hsl[0], 4), 0), setFixed2(deSaturation(hsl[1], 0.3), 0), setFixed2(luminance(hsl[2], 0.20), 0)],
+        200: [setFixed2(Matiz(hsl[0], 3), 0), setFixed2(deSaturation(hsl[1], 0.4), 0), setFixed2(luminance(hsl[2], 0.25), 0)],
+        250: [setFixed2(Matiz(hsl[0], 2), 0), setFixed2(deSaturation(hsl[1], 0.5), 0), setFixed2(luminance(hsl[2], 0.30), 0)],
+        300: [setFixed2(Matiz(hsl[0], 1), 0), setFixed2(deSaturation(hsl[1], 0.6), 0), setFixed2(luminance(hsl[2], 0.35), 0)],
+        350: [setFixed2(Matiz(hsl[0], -1), 0), setFixed2(deSaturation(hsl[1], 0.7), 0), setFixed2(luminance(hsl[2], 0.40), 0)],
+        400: [setFixed2(Matiz(hsl[0], -2), 0), setFixed2(deSaturation(hsl[1], 0.8), 0), setFixed2(luminance(hsl[2], 0.45), 0)]
     };
 
     //verifica se o usuario, pedio efeitos de pos-Processamento

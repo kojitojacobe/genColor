@@ -3,6 +3,7 @@
 import tonemap from '../../../algorithms/func/PostProcessing/ToneMap/toneMap.js';
 import hdr from '../../../algorithms/func/PostProcessing/HDR/hDR.js';
 import smooth from '../../../algorithms/func/PostProcessing/Smooth/smooth.js';
+import neighbor from '../../../algorithms/func/PostProcessing/Neighbor/neighbor.js';
 import EffectsEnable from './postEffectsEnable.json' with {type: 'json'};
 
 
@@ -20,7 +21,7 @@ export default function postProcessingSecurityApply(effects, genPalet) {
      * @param {array} value - array com efeitos validos(EffectsEnable)
      * @returns {string} - retorna uma mensagem no console, alertando sobre valor invalido 
      */
-    const warn = (value = effects) => {console.log('Erro: valor invalido detectado', value, 'paleta padrão retornada')};
+    const warn = (value = effects) => { console.log('Erro: valor invalido detectado', value, 'paleta padrão retornada') };
 
     //verifica se é uma string, ou se é uma string vazia ''
     const isString = effects.every(item => typeof (item) === 'string' || item.length !== 0);
@@ -43,19 +44,31 @@ export default function postProcessingSecurityApply(effects, genPalet) {
         const effectsApply = {
             'smooth': smooth,
             'tonemap': tonemap,
-            'hdr': hdr
+            'hdr': hdr,
+            'neighbor': neighbor
         };
 
 
         if (isValideProcessingArray()) {
 
             //Verificação da quantidade de efeitos do array, mude o valor, caso crie um novo efeito
-            if (effects.length === 3) {
+            if (effects.length === 4) {
                 //faz um loop 9 vezes
                 for (let i = 0; i <= 400; i += 50) {
-                    postProcessingArray[i] = effectsApply[effects[0]](effectsApply[effects[1]](effectsApply[effects[2]](genPalet[i])));
+                    postProcessingArray[i] = effectsApply[effects[0]](effectsApply[effects[1]](effectsApply[effects[2]](effectsApply[effects[3]](genPalet[i], genPalet, i), genPalet, i), genPalet, i), genPalet, i);
                 }
-                
+
+                //Objeto final
+                return postProcessingArray;
+
+
+
+            } else if (effects.length === 3) {
+                //faz um loop 9 vezes
+                for (let i = 0; i <= 400; i += 50) {
+                    postProcessingArray[i] = effectsApply[effects[0]](effectsApply[effects[1]](effectsApply[effects[2]](genPalet[i], genPalet, i), genPalet, i), genPalet, i);
+                }
+
                 //Objeto final
                 return postProcessingArray;
 
@@ -64,9 +77,10 @@ export default function postProcessingSecurityApply(effects, genPalet) {
             } else if (effects.length === 2) {
                 for (let i = 0; i <= 400; i += 50) {
 
-                    postProcessingArray[i] = effectsApply[effects[0]](effectsApply[effects[1]](genPalet[i]));
+                    postProcessingArray[i] = effectsApply[effects[0]](effectsApply[effects[1]](genPalet[i], genPalet, i), genPalet, i);
                 };
-                
+
+
                 return postProcessingArray;
 
 
@@ -74,10 +88,9 @@ export default function postProcessingSecurityApply(effects, genPalet) {
 
             } else if (effects.length === 1) {
                 for (let i = 0; i <= 400; i += 50) {
-                    postProcessingArray[i] = effectsApply[effects[0]](genPalet[i])
+                    postProcessingArray[i] = effectsApply[effects[0]](genPalet[i], genPalet, i)
                 }
                 return postProcessingArray;
-
 
 
             }

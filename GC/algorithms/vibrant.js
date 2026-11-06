@@ -26,16 +26,16 @@ export default function vibrantPalet(hsl, postEffect, types = 'hex') {
 
         0: [setFixed2(hsl[0], 0), setFixed2(hsl[1], 0), setFixed2(hsl[2], 0)],
 
-        50: [setFixed2(Matiz(hsl[0], 3)), setFixed2(saturation(hsl[1], 0.70), 0), setFixed2(luminance(hsl[2], 0.3), 0)],
+        50: [setFixed2(Matiz(hsl[0], 2)), setFixed2(saturation(hsl[1], 0.70), 0), setFixed2(luminance(hsl[2], 0.3), 0)],
 
 
-        100: [setFixed2(Matiz(hsl[0], 5), 0), setFixed2(saturation(hsl[1], 0.75), 0), setFixed2(luminance(hsl[2], 0.2), 0)],
-        150: [setFixed2(Matiz(hsl[0], 7), 0), setFixed2(saturation(hsl[1], 0.80), 0), setFixed2(luminance(hsl[2], 0.1), 0)],
-        200: [setFixed2(Matiz(hsl[0], 9), 0), setFixed2(saturation(hsl[1], 0.85), 0), setFixed2(darkness(hsl[2], 0.1), 0)],
-        250: [setFixed2(Matiz(hsl[0], 11), 0), setFixed2(saturation(hsl[1], 0.90), 0), setFixed2(darkness(hsl[2], 0.2), 0)],
-        300: [setFixed2(Matiz(hsl[0], 13), 0), setFixed2(saturation(hsl[1], 0.95), 0), setFixed2(darkness(hsl[2], 0.3), 0)],
-        350: [setFixed2(Matiz(hsl[0], 15), 0), setFixed2(saturation(hsl[1], 0.95), 0), setFixed2(darkness(hsl[2], 0.4), 0)],
-        400: [setFixed2(Matiz(hsl[0], 17), 0), setFixed2(saturation(hsl[1], 0.95), 0), setFixed2(darkness(hsl[2], 0.5), 0)]
+        100: [setFixed2(Matiz(hsl[0], 4), 0), setFixed2(saturation(hsl[1], 0.75), 0), setFixed2(luminance(hsl[2], 0.2), 0)],
+        150: [setFixed2(Matiz(hsl[0], 6), 0), setFixed2(saturation(hsl[1], 0.80), 0), setFixed2(luminance(hsl[2], 0.1), 0)],
+        200: [setFixed2(Matiz(hsl[0], 8), 0), setFixed2(saturation(hsl[1], 0.85), 0), setFixed2(darkness(hsl[2], 0), 0)],
+        250: [setFixed2(Matiz(hsl[0], 10), 0), setFixed2(saturation(hsl[1], 0.90), 0), setFixed2(darkness(hsl[2], 0.1), 0)],
+        300: [setFixed2(Matiz(hsl[0], 12), 0), setFixed2(saturation(hsl[1], 0.95), 0), setFixed2(darkness(hsl[2], 0.2), 0)],
+        350: [setFixed2(Matiz(hsl[0], 14), 0), setFixed2(saturation(hsl[1], 0.95), 0), setFixed2(darkness(hsl[2], 0.3), 0)],
+        400: [setFixed2(Matiz(hsl[0], 16), 0), setFixed2(saturation(hsl[1], 0.95), 0), setFixed2(darkness(hsl[2], 0.4), 0)]
     };
 
     //verifica se o usuario, pedio efeitos de pos-Processamento
